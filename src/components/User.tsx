@@ -1,16 +1,19 @@
 type UserProps = {
-  name: string;
-  age: number;
-  email: string;
-  isRegistered: boolean;
+  user: {
+    name: string;
+    age: number;
+    email: string;
+    isRegistered: boolean;
+    lang: string[];
+  };
 };
-const User = ({ name, age, email, isRegistered }: UserProps) => {
+const User = ({ user }: UserProps) => {
   return (
     <div>
-      <h1>{name}</h1>
-      <p>{age}</p>
-      <p>{email}</p>
-      <p>{isRegistered ? "Registered" : "Not Registered"}</p>
+      <h1>{user.name}</h1>
+      <p>{user.age}</p>
+      <p>{user.email}</p>
+      <p>{user.isRegistered ? "Registered" : "Not Registered"}</p>
     </div>
   );
 };
